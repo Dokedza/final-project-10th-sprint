@@ -11,15 +11,16 @@
 mkdir -p task/dir1, task/dir2, task/dir3/dir4
 # создаём пустой файл task/dir2/empty
 cd task
-touch task/dir2/empty
+touch /dir2/empty
+
+#Я предполагаю, что ошибка была в указании директории task, её было невозможно найти внутри самой себя, если я не прав, прошу исправить
 # создаём файл task/dir2/hello.sh с таким содержанием:
 # #!/bin/bash
 # echo "$1, привет!"
 echo "#!/bin/bash
-echo '"$1, привет!"' > task/dir2/hello.sh                       
+echo '"$1, привет!"' > dir2/hello.sh                       
 chmod 764 dir2/hello.sh
 # устанавливаем для task/dir2/hello.sh права rwxrw-r--
-chmod 764 task/dir2/hello.sh
 # сохраняем список файлов task/dir2 в task/dir2/list.txt
 ls dir2 > dir2/list.txt
 # копируем содержимое каталога task/dir2 в каталог task/dir3/dir4
